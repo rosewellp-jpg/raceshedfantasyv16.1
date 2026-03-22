@@ -1,0 +1,181 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Race Shed Fantasy V16</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="top-stripe"></div>
+
+  <header class="hero shell">
+    <div class="hero-copy panel">
+      <div class="eyebrow">2026 NASCAR Fantasy League</div>
+      <h1>Race Shed Fantasy <span>V16</span></h1>
+      <p>Broadcast-style auto-sync dashboard with animated branding, driver season points, most-picked heat, trending drivers, and a cleaner weekly race showcase.</p>
+      <div class="pill-row" id="heroPills"></div>
+      <div class="hero-subgrid">
+        <div class="mini-panel emphasis pulse-card">
+          <div class="label">Featured race pot</div>
+          <div class="big-number" id="featuredPotValue">$0</div>
+          <div class="mini-note" id="featuredPotPlayers">0 players submitted</div>
+        </div>
+        <div class="mini-panel">
+          <div class="label">Workbook status</div>
+          <div class="big-number" id="workbookStatus">Loading…</div>
+        </div>
+        <div class="mini-panel">
+          <div class="label">Picks submitted</div>
+          <div class="big-number" id="picksSubmittedCount">-</div>
+        </div>
+        <div class="mini-panel">
+          <div class="label">Most picked driver</div>
+          <div class="big-number compact" id="mostPickedMini">-</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="hero-details panel">
+      <div class="section-head hero-head">
+        <div>
+          <div class="eyebrow">Race Shed Fantasy</div>
+          <h2 id="trackTitle">Loading track details…</h2>
+        </div>
+        <div class="track-badge" id="trackBadge">AUTO</div>
+      </div>
+      <div class="hero-image-stage">
+        <div class="logo-glow"></div>
+        <div class="hero-image-wrap">
+          <img id="heroImage" src="./assets/raceshed-fantasy-image.png" alt="Race Shed Fantasy logo" />
+        </div>
+      </div>
+      <div class="track-grid" id="trackGrid"></div>
+      <div class="track-note" id="trackNote"></div>
+    </div>
+  </header>
+
+  <main class="shell">
+    <section class="headline panel">
+      <div>
+        <div class="eyebrow">Featured race</div>
+        <div class="featured-title" id="featuredRaceName">Loading…</div>
+        <div class="featured-meta" id="featuredMeta"></div>
+      </div>
+      <div class="live-chip">AUTO SYNC • PUBLIC VIEW ONLY</div>
+    </section>
+
+    <section class="top-grid">
+      <article class="panel picks-panel">
+        <div class="section-head">
+          <div>
+            <div class="eyebrow">Weekly picks</div>
+            <h2>Player picks at the top</h2>
+          </div>
+          <div class="race-select-wrap">
+            <label for="racePicker">Race</label>
+            <select id="racePicker"></select>
+          </div>
+        </div>
+        <div id="picksSummary" class="summary"></div>
+        <div id="picksBoard"></div>
+      </article>
+
+      <div class="side-stack">
+        <article class="panel">
+          <div class="section-head">
+            <div>
+              <div class="eyebrow">Race week spotlight</div>
+              <h2>This week's track info</h2>
+            </div>
+          </div>
+          <div id="weeklyTrackBox" class="weekly-track-box"></div>
+        </article>
+
+        <article class="panel">
+          <div class="section-head">
+            <div>
+              <div class="eyebrow">Trending drivers</div>
+              <h2>Momentum heading in</h2>
+            </div>
+          </div>
+          <div id="trendingDriversBox"></div>
+        </article>
+      </div>
+    </section>
+
+    <section class="stats-grid" id="statsGrid"></section>
+
+    <section class="insights-grid">
+      <article class="panel">
+        <div class="section-head">
+          <div>
+            <div class="eyebrow">Driver season points</div>
+            <h2>Standings fuel for picks</h2>
+          </div>
+          <div class="small-chip" id="driverPointsSource">Workbook data</div>
+        </div>
+        <div id="driverPointsBoard"></div>
+      </article>
+
+      <article class="panel spotlight-panel">
+        <div class="section-head">
+          <div>
+            <div class="eyebrow">Most picked driver</div>
+            <h2>Season excitement tracker</h2>
+          </div>
+        </div>
+        <div id="mostPickedDriverBox"></div>
+      </article>
+    </section>
+
+    <section class="mid-grid">
+      <article class="panel">
+        <div class="section-head">
+          <div>
+            <div class="eyebrow">Championship</div>
+            <h2>Standings</h2>
+          </div>
+        </div>
+        <div id="standingsBoard"></div>
+      </article>
+
+      <article class="panel">
+        <div class="section-head">
+          <div>
+            <div class="eyebrow">Latest completed race</div>
+            <h2 id="resultsTitle">Race results</h2>
+          </div>
+        </div>
+        <div id="podiumBoard" class="podium-wrap"></div>
+        <div id="raceResults"></div>
+      </article>
+    </section>
+
+    <section class="bottom-grid">
+      <article class="panel">
+        <div class="section-head">
+          <div>
+            <div class="eyebrow">Previous race scoring</div>
+            <h2>Driver points from last race</h2>
+          </div>
+        </div>
+        <div id="latestScoring"></div>
+      </article>
+
+      <article class="panel">
+        <div class="section-head">
+          <div>
+            <div class="eyebrow">Season trail</div>
+            <h2>Full season schedule</h2>
+          </div>
+        </div>
+        <div id="scheduleBoard"></div>
+      </article>
+    </section>
+  </main>
+
+  <script src="https://cdn.jsdelivr.net/npm/xlsx@0.18.5/dist/xlsx.full.min.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
